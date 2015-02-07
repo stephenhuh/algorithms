@@ -6,7 +6,6 @@
 
 void insertionSort(int ar_size, int *ar){
     int tmp = ar[ar_size-1], i, j;
-    printf("%d", tmp);
     for (i = 1; i < ar_size; i++){
         if ( ar[ar_size-1-i] > tmp){
             ar[ar_size-i] = ar[ar_size-1-i];
