@@ -4,10 +4,23 @@
 #include <stdlib.h>
 #include <assert.h>
 void insertionSort(int ar_size, int *  ar) {
-    
-
-
+    int i, value, hole, j;
+    for (i = 1; i < ar_size; i++){
+        value = ar[i];
+        hole = i;
+        while (hole > 0 && ar[hole-1] > value){
+            ar[hole] = ar[hole-1];
+            hole--;
+        }
+        ar[hole] = value;
+        for (j = 0; j < ar_size; j++){
+            printf("%d ", ar[j]);
+        }
+        printf("\n");
+    }
 }
+
+
 int main(void) {
        
        int _ar_size;
