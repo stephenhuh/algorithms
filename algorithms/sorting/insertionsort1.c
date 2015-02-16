@@ -5,21 +5,28 @@
 #include <assert.h>
 
 void insertionSort(int ar_size, int *ar){
-    int tmp = ar[ar_size-1], i, j;
-    printf("%d", tmp);
-    for (i = 1; i < ar_size; i++){
-        if ( ar[ar_size-1-i] > tmp){
-            ar[ar_size-i] = ar[ar_size-1-i];
-        }
-        else 
-            ar[ar_size-i] = tmp;
-        for (j = 0; j < ar_size; j++)
-            printf("%d ", ar[j]);
-        printf("\n");
+    int tmp = ar[ar_size-1], i, j; //take last element into tmp
+    if (tmp >= ar[ar_size-2]){
+        return;
     }
-    
-
+    else
+        for (i = 0; i < ar_size; i++){ //
+            if (tmp < ar[ar_size-2-i]){
+                ar[ar_size-1-i] = ar[ar_size-2-i];
+                for (j = 0; j < ar_size; j++)
+                    printf("%d ", ar[j]);
+                printf("\n");
+            }    
+            else  {
+                ar[ar_size-1-i] = tmp;
+                for (j = 0; j < ar_size; j++)
+                    printf("%d ", ar[j]);
+                return;
+                printf("\n");
+            }
+        }
 }
+
 
 int main (void){
 
